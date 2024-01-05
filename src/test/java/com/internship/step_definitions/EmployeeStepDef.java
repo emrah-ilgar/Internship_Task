@@ -92,8 +92,7 @@ public class EmployeeStepDef {
         Assert.assertFalse(actualEmployeerList.contains("alex2024@gmail.com"));
 
 
-//        Assert.assertNull("Alex is here",employeeListPage.newEmployeeMail.getText());
-//        Assert.assertNotSame("alex2024@gmail.com", employeeListPage.newEmployeeMail.getText());
+
 
 
     }
