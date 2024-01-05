@@ -1,10 +1,6 @@
 package com.internship.pages;
-
-import com.internship.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,19 +53,24 @@ public class EmployeePage extends BasePage{
     @FindBy(css = ".btn.btn-default")
     public WebElement secondDeleteBtn;
 
-    @FindBy(xpath = "//td[contains(text(),'alex2024@gmail.com')]")
-    public WebElement newEmployeeMail;
-
     @FindBy(xpath = "//table/tbody/tr")
     public List<WebElement> allTable;
 
-    public static List<String> getActualListText(List<WebElement> list) {
+    public List<String> getActualListText(List<WebElement> list) {
         List<String> actualList = new ArrayList<>();
 
         for (int i=0;i< list.size()-1;i++) {
             actualList.add(list.get(i).getText());
         }
         return actualList;
+    }
+    public List<String> getActualEmployeerList() {
+        List<WebElement> allRows = allTable;
+        List<String> actualEmployeerList = new ArrayList<>();
+        for (WebElement allRow : allRows) {
+            actualEmployeerList.add(allRow.getText());
+        }
+        return actualEmployeerList;
     }
 
 
